@@ -34,6 +34,14 @@ sudo mkdir -p /mnt/usb
 
 sudo npm install -g neovim
 
+if [[ -f /etc/xdg/user-dirs.conf ]]; then
+    if grep -qiE '^\s*enabled\s*=' /etc/xdg/user-dirs.conf; then
+        sudo sed -i -E 's/^\s*enabled\s*=.*/enabled=False/I' /etc/xdg/user-dirs.conf
+    else
+        echo "enabled=False" | sudo tee -a /etc/xdg/user-dirs.conf >/dev/null
+    fi
+fi
+
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo tee "/etc/X11/xorg.conf.d/00-keyboard.conf" >/dev/null <<'EOF'
 Section "InputClass"
