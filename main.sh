@@ -178,8 +178,8 @@ bindsym $mod+Shift+Return exec --no-startup-id alacritty --class="main"
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod2+l exec --no-startup-id "sleep 0.2 && ~/.local/bin/screen-off"
-bindsym $mod2+Escape exec poweroff
-bindsym $mod2+Shift+Escape exec reboot
+bindsym $mod2+Escape exec /usr/sbin/poweroff
+bindsym $mod2+Shift+Escape exec /usr/sbin/reboot
 bindsym $mod2+n exec --no-startup-id alacritty --class="nmtui" -e nmtui
 
 bindsym $mod2+y exec --no-startup-id brightnessctl set 50%
