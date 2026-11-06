@@ -2,6 +2,8 @@
 
 set -e
 
+sudo sed -i '/^menuentry /,$d' /etc/grub.d/40_custom
+
 DEBIAN_NAME="Debian 13"
 WINDOWS_NAME="Windows 11"
 
@@ -18,9 +20,9 @@ WIN_LINE=$(sudo os-prober 2>/dev/null | grep -m1 'Windows Boot Manager' || true)
     exit 1
 }
 
-WIN_DEV=${WIN_LINE%%@*} # e.g. /dev/nvme0n1p1
+WIN_DEV=${WIN_LINE%%@*}
 WIN_PATH=${WIN_LINE#*@}
-WIN_PATH=${WIN_PATH%%:*} # e.g. /efi/Microsoft/Boot/bootmgfw.efi
+WIN_PATH=${WIN_PATH%%:*}
 WIN_UUID=$(sudo blkid -s UUID -o value "$WIN_DEV")
 [ -n "$WIN_UUID" ] || {
     echo "Could not read UUID of $WIN_DEV"
@@ -37,7 +39,6 @@ menuentry "$DEBIAN_NAME" {
 EOF
 fi
 
-# Windows entry (once)
 if ! grep -q "menuentry \"$WINDOWS_NAME\"" /etc/grub.d/40_custom; then
     sudo tee -a /etc/grub.d/40_custom >/dev/null <<EOF
 menuentry "$WINDOWS_NAME" {
