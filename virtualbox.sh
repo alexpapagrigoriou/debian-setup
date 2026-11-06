@@ -4,6 +4,8 @@ set -e
 
 sudo apt update
 
+sudo apt install -y ansible
+
 sudo apt install -y wget gpg lsb-release build-essential dkms linux-headers-amd64
 
 wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes -o /usr/share/keyrings/oracle-virtualbox-2016.gpg
