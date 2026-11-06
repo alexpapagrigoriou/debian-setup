@@ -22,7 +22,7 @@ mkdir -p "$HOME/.local/bin"
 cat >"$HOME/.local/bin/idle-monitor" <<'EOF'
 #!/bin/bash
 
-IDLE_OFF=600000 # 10 minutes
+IDLE_OFF=600000    # 10 minutes
 IDLE_SLEEP=1800000 # 30 minutes
 
 OFF_TRIGGERED=0
@@ -60,7 +60,7 @@ Description=Automatic Screen Locker
 Type=simple
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=%h/.Xauthority
-ExecStart=%h/.local/bin/idle-monitor.sh
+ExecStart=%h/.local/bin/idle-monitor
 Restart=always
 RestartSec=5
 
