@@ -171,9 +171,9 @@ bindsym $mod+Shift+s sticky toggle
 
 assign [class="Zathura"] $ws1
 assign [class="main"] $ws3
-assign [class="code-oss"] $ws7
+assign [class="VSCode"] $ws7
 assign [class="jetbrains-idea"] $ws7
-assign [class="firefox"] $ws8
+assign [class="firefox-esr"] $ws8
 assign [class="discord"] $ws10
 
 for_window [class="nmtui"] floating enable
@@ -196,11 +196,11 @@ bindsym $mod2+h exec --no-startup-id pamixer --toggle-mute
 bindsym $mod2+j exec --no-startup-id pamixer --decrease 5
 bindsym $mod2+k exec --no-startup-id pamixer --increase 5
 
-bindsym $mod+Shift+g exec --no-startup-id firefox --new-window
-bindsym $mod+Shift+y exec --no-startup-id firefox --new-window "youtube.com"
-bindsym $mod+Shift+t exec --no-startup-id firefox --new-window "github.com"
-bindsym $mod+Shift+b exec --no-startup-id firefox --new-window "gitlab.com"
-bindsym $mod+Shift+m exec --no-startup-id firefox --new-window "mail.google.com"
+bindsym $mod+Shift+g exec --no-startup-id firefox-esr --new-window
+bindsym $mod+Shift+y exec --no-startup-id firefox-esr --new-window "youtube.com"
+bindsym $mod+Shift+t exec --no-startup-id firefox-esr --new-window "github.com"
+bindsym $mod+Shift+b exec --no-startup-id firefox-esr --new-window "gitlab.com"
+bindsym $mod+Shift+m exec --no-startup-id firefox-esr --new-window "mail.google.com"
 
 bindsym $mod+Shift+f exec --no-startup-id thunar
 bindsym $mod+Shift+p exec --no-startup-id gimp
