@@ -6,10 +6,6 @@ umask 022
 
 sudo apt update
 
-sudo apt install -y i3 i3blocks xorg \
-    lightdm lightdm-gtk-greeter
-sudo systemctl enable lightdm
-
 sudo apt install -y build-essential fastfetch less feh xss-lock dunst libnotify-bin man-db manpages \
     bc procps coreutils gawk sed grep \
     tree xclip git git-filter-repo zsh curl wget fonts-powerline ripgrep fd-find \
