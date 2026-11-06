@@ -1,0 +1,12 @@
+Run:
+sudo vim /etc/default/grub
+
+Change:
+GRUB_TIMEOUT=0
+
+GRUB_TIMEOUT_STYLE=hidden
+
+Run:
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+reboot

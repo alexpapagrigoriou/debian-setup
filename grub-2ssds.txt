@@ -1,0 +1,25 @@
+Run:
+lsblk -f
+
+Find disk with Windows partition and take the UUID (next to vfat FAT32):
+
+Run:
+sudo vim /etc/grub.d/40_custom
+
+Add (replace UUID with your UUID):
+
+menuentry "Windows 11" {
+    insmod part_gpt
+    insmod fat
+    insmod chain
+    search --no-floppy --fs-uuid --set=root UUID
+    chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+}
+
+Run:
+sudo chmod -x /etc/grub.d/30_uefi-firmware
+
+Run:
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+reboot

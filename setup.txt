@@ -1,0 +1,13 @@
+su -
+apt update
+apt install -y sudo
+usermod -aG sudo alex
+reboot
+
+sudo apt update
+sudo apt install -y network-manager
+sudo systemctl enable --now NetworkManager
+
+nmtui
+
+sudo apt install firefox-esr unzip
