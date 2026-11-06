@@ -8,7 +8,7 @@ sudo apt install -y xprintidle
 sudo mkdir -p /etc/systemd/logind.conf.d
 sudo tee "/etc/systemd/logind.conf.d/sleep-operation.conf" >/dev/null <<'EOF'
 [Login]
-SleepOperation=suspend-then-hibernate suspend
+SleepOperation=suspend
 EOF
 
 sudo tee "/etc/systemd/logind.conf.d/lid-switch.conf" >/dev/null <<'EOF'
@@ -16,18 +16,6 @@ sudo tee "/etc/systemd/logind.conf.d/lid-switch.conf" >/dev/null <<'EOF'
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
-EOF
-
-sudo mkdir -p /etc/systemd/sleep.conf.d
-sudo tee "/etc/systemd/sleep.conf.d/hibernate-delay.conf" >/dev/null <<'EOF'
-[Sleep]
-HibernateDelaySec=90min
-EOF
-
-sudo mkdir -p /etc/UPower/UPower.conf.d
-sudo tee "/etc/UPower/UPower.conf.d/01-critical-power-action.conf" >/dev/null <<'EOF'
-[UPower]
-CriticalPowerAction=Hibernate
 EOF
 
 mkdir -p "$HOME/.local/bin"
