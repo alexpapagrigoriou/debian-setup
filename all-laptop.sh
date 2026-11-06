@@ -2,7 +2,6 @@
 
 scripts=(
     main.sh
-    file-manager.sh
     git.sh
     ssh.sh
     remap.sh

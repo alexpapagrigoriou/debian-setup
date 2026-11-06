@@ -16,6 +16,8 @@ sudo apt install -y build-essential fastfetch less feh xss-lock dunst libnotify-
     nodejs npm \
     tmux zip unzip
 
+sudo apt install -y thunar tumbler gvfs gvfs-backends gvfs-fuse udisks2 file-roller unzip p7zip-full unrar-free
+
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
