@@ -12,9 +12,15 @@ sudo apt install -y build-essential fastfetch less feh xss-lock dunst libnotify-
     gcc clang make bear gdb valgrind \
     openjdk-21-jdk maven gradle \
     lua5.1 luarocks \
-    python3 python3-pip python3-pynvim \
-    neovim nodejs npm \
+    python3 python3-pip python3-pynvim python3-venv \
+    nodejs npm \
     tmux zip unzip
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
+rm nvim-linux-x86_64.tar.gz
 
 sudo apt install -y x11-utils x11-xserver-utils \
     arandr lxappearance brightnessctl \
