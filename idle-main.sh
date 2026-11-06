@@ -2,6 +2,9 @@
 
 set -e
 
+sudo apt update
+sudo apt install -y xprintidle
+
 sudo mkdir -p /etc/systemd/logind.conf.d
 sudo tee "/etc/systemd/logind.conf.d/sleep-operation.conf" >/dev/null <<'EOF'
 [Login]
