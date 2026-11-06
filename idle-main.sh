@@ -45,7 +45,7 @@ EOF
 chmod +x "$HOME/.local/bin/idle-monitor"
 
 mkdir -p "$HOME/.config/systemd/user"
-cat >"$HOME/.config/systemd/user/idle-monitor.service" <<EOF
+cat >"$HOME/.config/systemd/user/idle-monitor.service" <<'EOF'
 [Unit]
 Description=Automatic Screen Locker
 

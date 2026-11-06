@@ -11,8 +11,14 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] 
 sudo apt update
 sudo apt install -y virtualbox-7.1
 
-# Vagrant
 wget -qO- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update
 sudo apt install -y vagrant
+
+sudo tee /etc/modprobe.d/blacklist-kvm.conf >/dev/null <<'EOF'
+blacklist kvm
+blacklist kvm_amd
+EOF
+
+sudo update-initramfs -u -k all

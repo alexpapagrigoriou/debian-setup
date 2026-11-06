@@ -7,7 +7,7 @@ sudo apt update
 sudo apt install -y git git-lfs
 git lfs install
 
-cat >"$HOME/.gitconfig" <<EOF
+cat >"$HOME/.gitconfig" <<'EOF'
 [user]
 	name = Alexandros Papagrigoriou
 	email = apapagrigoriou17@gmail.com
