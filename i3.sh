@@ -4,8 +4,6 @@ set -e
 
 sudo apt update
 
-sudo apt remove -y xdg-user-dirs
-
 sudo apt install -y x11-utils x11-xserver-utils \
     arandr lxappearance brightnessctl
 
