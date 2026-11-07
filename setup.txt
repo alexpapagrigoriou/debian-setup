@@ -16,4 +16,4 @@ sudo systemctl enable lightdm
 
 sudo apt install firefox-esr unzip
 
-reboot
+/usr/sbin/reboot
