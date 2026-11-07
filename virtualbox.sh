@@ -21,6 +21,7 @@ sudo apt install -y vagrant
 sudo tee /etc/modprobe.d/blacklist-kvm.conf >/dev/null <<'EOF'
 blacklist kvm
 blacklist kvm_amd
+blacklist kvm_intel
 EOF
 
 sudo update-initramfs -u -k all
