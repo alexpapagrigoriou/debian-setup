@@ -3,6 +3,7 @@
 scripts=(
     devtools.sh
     i3.sh
+    lightdm-autofill.sh
     file-manager.sh
     git.sh
     ssh.sh
