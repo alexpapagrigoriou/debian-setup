@@ -18,6 +18,7 @@ sudo apt install -y thunar tumbler gvfs gvfs-backends gvfs-fuse udisks2 file-rol
 
 bash nvim-update.sh
 rm nvim-update.sh
+sudo npm install -g neovim
 
 sudo apt install -y x11-utils x11-xserver-utils \
     arandr lxappearance brightnessctl \
@@ -26,8 +27,6 @@ sudo apt install -y x11-utils x11-xserver-utils \
 
 sudo apt install -y gdisk exfatprogs
 sudo mkdir -p /mnt/usb
-
-sudo npm install -g neovim
 
 sudo apt remove -y xdg-user-dirs
 
