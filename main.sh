@@ -4,9 +4,9 @@ set -e
 
 sudo apt update
 
-sudo apt install -y build-essential fastfetch less feh xss-lock dunst libnotify-bin man-db manpages \
-    bc procps coreutils gawk sed grep \
+sudo apt install -y build-essential fastfetch less feh man-db manpages \
     tree xclip git git-filter-repo zsh curl wget fonts-powerline ripgrep fd-find \
+    bc procps coreutils gawk sed grep xss-lock dunst libnotify-bin \
     gcc clang make bear gdb valgrind \
     openjdk-21-jdk maven gradle \
     lua5.1 luarocks \
