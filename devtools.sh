@@ -49,8 +49,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 
-#export JAVA_TOOL_OPTIONS="--enable-native-access=ALL-UNNAMED"
-
 # Aliases
 alias c="clear"
 
@@ -167,6 +165,3 @@ EOF
 
 rm -rf "$HOME/.tmux/plugins/tpm"
 git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
-
-echo ""
-echo "reboot"
