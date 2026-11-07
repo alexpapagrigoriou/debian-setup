@@ -14,6 +14,7 @@ sudo apt install -y build-essential fastfetch less feh man-db manpages \
     nodejs npm \
     tmux zip unzip
 
+sudo apt remove -y neovim
 bash nvim-update.sh
 rm nvim-update.sh
 sudo npm install -g neovim
