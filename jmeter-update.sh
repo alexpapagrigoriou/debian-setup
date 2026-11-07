@@ -33,3 +33,5 @@ ln -sf ~/.local/jmeter/bin/jmeter ~/.local/bin/jmeter
 for d in ~/.local/apache-jmeter-*; do
     [ "$d" != "$DEST" ] && rm -rf "$d"
 done
+
+exit 0

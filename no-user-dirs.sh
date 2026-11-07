@@ -17,3 +17,5 @@ EOF
 for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
     rmdir "$HOME/$d" 2>/dev/null
 done
+
+exit 0
