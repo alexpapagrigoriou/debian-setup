@@ -3,15 +3,16 @@
 scripts=(
     devtools.sh
     i3.sh
+    file-manager.sh
     git.sh
     ssh.sh
     remap.sh
     mirror.sh
-    idle-pc.sh
     vscode.sh
     discord.sh
     docker.sh
     virtualbox.sh
+    idle-pc.sh
 )
 
 cd "$(dirname "$0")" || exit 1

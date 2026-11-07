@@ -3,15 +3,16 @@
 scripts=(
     devtools.sh
     i3.sh
+    file-manager.sh
     git.sh
     ssh.sh
     remap.sh
     mirror.sh
-    idle-laptop.sh
     vscode.sh
     discord.sh
     docker.sh
     virtualbox.sh
+    idle-laptop.sh
 )
 
 cd "$(dirname "$0")" || exit 1
@@ -29,8 +30,8 @@ for f in "${scripts[@]}"; do
     fi
 
     echo "--- $f succeeded, removing"
+    echo ""
     rm -- "$f"
 done
 
-echo ""
 echo "reboot"
