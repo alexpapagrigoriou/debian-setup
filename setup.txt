@@ -10,10 +10,10 @@ sudo systemctl enable --now NetworkManager
 
 nmtui
 
-
 sudo apt install -y i3 i3blocks xorg lightdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
 
-sudo apt install firefox-esr unzip
-
 /usr/sbin/reboot
+
+sudo apt install -y git
+git clone https://github.com/alexpapagrigoriou/debian-setup.git
