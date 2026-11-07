@@ -4,6 +4,10 @@ set -e
 
 sudo apt update
 
+sudo apt remove -y xdg-user-dirs
+rm -rf Desktop Documents Pictures Public Templates Videos
+mkdir -p "$HOME/Code"
+
 sudo apt install -y x11-utils x11-xserver-utils \
     arandr lxappearance brightnessctl
 
