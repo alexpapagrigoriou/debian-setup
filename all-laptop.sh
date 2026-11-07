@@ -1,7 +1,8 @@
 #!/bin/bash
 
 scripts=(
-    main.sh
+    devtools.sh
+    i3.sh
     git.sh
     ssh.sh
     remap.sh

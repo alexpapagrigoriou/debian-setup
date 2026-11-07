@@ -1,7 +1,8 @@
 #!/bin/bash
 
 scripts=(
-    main.sh
+    devtools.sh
+    i3.sh
     git.sh
     ssh.sh
     remap.sh
@@ -28,8 +29,8 @@ for f in "${scripts[@]}"; do
     fi
 
     echo "--- $f succeeded, removing"
+    echo ""
     rm -- "$f"
 done
 
-echo ""
 echo "reboot"
