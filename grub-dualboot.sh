@@ -50,6 +50,11 @@ menuentry "$WINDOWS_NAME" {
 EOF
 fi
 
-sudo chmod -x /etc/grub.d/10_linux /etc/grub.d/30_uefi-firmware /etc/grub.d/30_os-prober
+sudo chmod -x \
+    /etc/grub.d/10_linux \
+    /etc/grub.d/20_linux_xen \
+    /etc/grub.d/25_bli \
+    /etc/grub.d/30_os-prober \
+    /etc/grub.d/30_uefi-firmware
 
 sudo update-grub
