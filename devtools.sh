@@ -26,6 +26,8 @@ sudo apt install -y gdisk exfatprogs
 sudo mkdir -p /mnt/usb
 
 sudo apt remove -y xdg-user-dirs
+rm -rf Desktop Documents Pictures Public Templates Videos
+mkdir -p "$HOME/Code"
 
 rm -rf "$HOME/.oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
