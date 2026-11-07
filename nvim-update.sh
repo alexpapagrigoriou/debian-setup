@@ -12,6 +12,8 @@ rm -rf ~/.local/nvim
 mkdir -p ~/.local/nvim
 
 tar -C ~/.local/nvim --strip-components=1 -xzf nvim-linux-x86_64.tar.gz
+
+mkdir -p ~/.local/bin
 ln -sf ~/.local/nvim/bin/nvim ~/.local/bin/nvim
 
 rm -rf "$TMP"

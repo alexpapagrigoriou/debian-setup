@@ -27,7 +27,7 @@ sha512sum -c "apache-jmeter-$VERSION.tgz.sha512"
 tar -C ~/.local -xzf "apache-jmeter-$VERSION.tgz"
 ln -sfn "$DEST" ~/.local/jmeter
 
-mkdir -p ~/.local/jmeter
+mkdir -p ~/.local/bin
 ln -sf ~/.local/jmeter/bin/jmeter ~/.local/bin/jmeter
 
 for d in ~/.local/apache-jmeter-*; do
