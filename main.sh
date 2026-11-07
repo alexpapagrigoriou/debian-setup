@@ -2,8 +2,6 @@
 
 set -e
 
-umask 022
-
 sudo apt update
 
 sudo apt install -y build-essential fastfetch less feh xss-lock dunst libnotify-bin man-db manpages \
@@ -580,9 +578,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
-# Environment
-umask 022
-
+# Environment Variables
 export PATH="/usr/sbin:/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
