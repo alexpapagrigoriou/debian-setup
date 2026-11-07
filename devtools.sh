@@ -14,16 +14,13 @@ sudo apt install -y build-essential fastfetch less feh man-db manpages \
     nodejs npm \
     tmux zip unzip
 
-sudo apt install -y thunar tumbler gvfs gvfs-backends gvfs-fuse udisks2 file-roller unzip p7zip-full unrar-free
-
 bash nvim-update.sh
 rm nvim-update.sh
 sudo npm install -g neovim
 
-sudo apt install -y x11-utils x11-xserver-utils \
-    arandr lxappearance brightnessctl \
-    pipewire wireplumber pavucontrol pamixer \
-    vifm mpv cmus alacritty gimp zathura zathura-pdf-poppler
+sudo apt install -y pipewire wireplumber pavucontrol pamixer \
+    vifm mpv cmus alacritty gimp zathura zathura-pdf-poppler \
+    firefox-esr
 
 sudo apt install -y gdisk exfatprogs
 sudo mkdir -p /mnt/usb

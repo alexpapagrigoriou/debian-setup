@@ -2,6 +2,11 @@
 
 set -e
 
+sudo apt update
+
+sudo apt install -y x11-utils x11-xserver-utils \
+    arandr lxappearance brightnessctl
+
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo tee "/etc/X11/xorg.conf.d/00-keyboard.conf" >/dev/null <<'EOF'
 Section "InputClass"
