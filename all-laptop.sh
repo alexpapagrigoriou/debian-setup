@@ -4,6 +4,7 @@ scripts=(
     devtools.sh
     i3.sh
     lightdm-autofill.sh
+    no-user-dirs.sh
     file-manager.sh
     git.sh
     ssh.sh
@@ -35,4 +36,4 @@ for f in "${scripts[@]}"; do
     rm -- "$f"
 done
 
-echo "reboot"
+echo "/usr/sbin/reboot"
