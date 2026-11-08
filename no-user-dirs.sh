@@ -8,10 +8,10 @@ XDG_MUSIC_DIR="$HOME/Music"
 XDG_PICTURES_DIR="$HOME/"
 XDG_PUBLICSHARE_DIR="$HOME/"
 XDG_TEMPLATES_DIR="$HOME/"
-XDG_VIDEOS_DIR="$HOME/"
+XDG_VIDEOS_DIR="$HOME/Videos"
 EOF
 
-for d in Desktop Documents Pictures Public Templates Videos; do
+for d in Desktop Documents Pictures Public Templates; do
     rmdir "$HOME/$d" 2>/dev/null
 done
 
