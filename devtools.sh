@@ -124,6 +124,12 @@ mkdir -p "$HOME/.config/cmus"
 cat >"$HOME/.config/cmus/rc" <<'EOF'
 clear
 add ~/Music/
+
+set aaa_mode=artist
+set continue=true
+set shuffle=tracks
+set repeat=false
+set auto_reshuffle=true
 EOF
 
 cat >"$HOME/.clang-format" <<'EOF'
