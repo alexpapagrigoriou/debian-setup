@@ -343,8 +343,8 @@ chmod +x "$HOME/.config/i3blocks/disk.sh"
 cat >"$HOME/.config/i3blocks/brightness.sh" <<'EOF'
 #!/bin/bash
 
-BRIGHTNESS=$(brightnessctl | grep -oP '\(\K[0-9]+(?=%\))')
-echo "BRI $BRIGHTNESS%"
+BRIGHTNESS=$(brightnessctl -m | cut -d, -f4)
+echo "BRI $BRIGHTNESS"
 EOF
 chmod +x "$HOME/.config/i3blocks/brightness.sh"
 
