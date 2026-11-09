@@ -164,8 +164,8 @@ bindsym $mod2+Shift+Escape exec /usr/sbin/reboot
 bindsym $mod2+n exec --no-startup-id alacritty --class="nmtui" -e nmtui
 
 bindsym $mod2+y exec --no-startup-id brightnessctl set 50%
-bindsym $mod2+u exec --no-startup-id brightnessctl set 10%-
-bindsym $mod2+i exec --no-startup-id brightnessctl set +10%
+bindsym $mod2+u exec --no-startup-id ~/.config/i3/brightness.sh down
+bindsym $mod2+i exec --no-startup-id ~/.config/i3/brightness.sh up
 
 bindsym $mod2+h exec --no-startup-id pamixer --toggle-mute
 bindsym $mod2+j exec --no-startup-id pamixer --decrease 5
@@ -203,6 +203,29 @@ exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
 exec --no-startup-id xset b 0 0 0 s 00 dpms 0 0 0
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/lock
 EOF
+
+cat >"$HOME/.config/i3/brightness.sh" <<'EOF'
+#!/bin/bash
+
+cur=$(brightnessctl -m | cut -d, -f4 | tr -d '%')
+
+case "$1" in
+up)
+    new=$((cur + 10))
+    [ "$new" -gt 100 ] && new=100
+    ;;
+down)
+    new=$((cur - 10))
+    [ "$new" -lt 0 ] && new=0
+    ;;
+*)
+    exit 1
+    ;;
+esac
+
+brightnessctl set "${new}%"
+EOF
+chmod +x "$HOME/.config/i3/brightness.sh"
 
 mkdir -p "$HOME/.config/i3blocks"
 cat >"$HOME/.config/i3blocks/config" <<'EOF'
