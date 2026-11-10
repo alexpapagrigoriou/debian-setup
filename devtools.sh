@@ -153,23 +153,26 @@ git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=sta
 
 rm -f "$HOME/.tmux.conf"
 cat >"$HOME/.tmux.conf" <<'EOF'
-set -ga terminal-overrides ",screen-256color*:Tc"
-set-option -g default-terminal "screen-256color"
+set -as terminal-features ",*:RGB"
+set-option -g default-terminal "tmux-256color"
+
+set -g status-style 'bg=#2f343f fg=#5eacd3'
+
 set -s escape-time 0
+
+set -g mouse on
+
+set -g base-index 1
 
 unbind C-b
 set-option -g prefix C-s
 bind-key C-s send-prefix
-set -g status-style 'bg=#333333 fg=#5eacd3'
 
 bind r source-file "$HOME/.tmux.conf"
-set -g base-index 1
 
+bind -r h previous-window
+bind -r l next-window
 bind -r ^ last-window
-bind -r k select-pane -U
-bind -r j select-pane -D
-bind -r h select-pane -L
-bind -r l select-pane -R
 EOF
 
 rm -rf "$HOME/.tmux/plugins/tpm"
