@@ -31,6 +31,7 @@ mkdir -p ~/.local/bin
 ln -sf ~/.local/jmeter/bin/jmeter ~/.local/bin/jmeter
 
 for d in ~/.local/apache-jmeter-*; do
+    [ -d "$d" ] || continue
     [ "$d" != "$DEST" ] && rm -rf "$d"
 done
 
