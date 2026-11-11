@@ -29,5 +29,5 @@ EOF
 chmod 600 "$HOME/.ssh/config" "$HOME/.ssh/config.d/"*
 
 if [ ! -f "$HOME/.ssh/id_git" ]; then
-    ssh-keygen -t ed25519 -C "apapagrigoriou17@gmail.com" -f "$HOME/.ssh/id_git" -N ""
+    ssh-keygen -t ed25519 -f "$HOME/.ssh/id_git" -N ""
 fi
