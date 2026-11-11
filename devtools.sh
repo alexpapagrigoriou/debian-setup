@@ -8,7 +8,7 @@ sudo apt install -y build-essential fastfetch less feh man-db manpages \
     tree xclip git git-filter-repo zsh curl wget fonts-powerline ripgrep fd-find \
     bc procps coreutils gawk sed grep xss-lock dunst libnotify-bin \
     gcc clang make bear gdb valgrind \
-    openjdk-21-jdk maven gradle \
+    openjdk-25-jdk maven gradle \
     lua5.1 luarocks \
     python3 python3-pip python3-pynvim python3-venv \
     nodejs npm \
@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/sbin:/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-25-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # Aliases
