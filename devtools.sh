@@ -19,6 +19,12 @@ bash nvim-update.sh
 rm nvim-update.sh
 sudo npm install -g neovim
 
+bash gradle-update.sh
+rm gradle-update.sh
+
+bash maven-update.sh
+rm maven-update.sh
+
 sudo apt install -y pipewire wireplumber pavucontrol pamixer \
     vifm mpv cmus alacritty gimp zathura zathura-pdf-poppler \
     firefox-esr
