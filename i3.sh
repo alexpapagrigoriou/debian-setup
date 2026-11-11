@@ -197,7 +197,7 @@ set $mon3 ""
 #workspace $ws9 output $mon3
 #workspace $ws10 output $mon3
 
-exec_always --no-startup-id ~/.config/i3/monitors.sh
+exec_always --no-startup-id /usr/local/bin/display-setup.sh
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
 
 exec --no-startup-id xset b 0 0 0 s 00 dpms 0 0 0
