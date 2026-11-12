@@ -14,11 +14,6 @@ sudo apt install -y build-essential fastfetch less feh man-db manpages \
     nodejs npm \
     tmux zip unzip
 
-sudo apt remove -y neovim
-bash nvim-update.sh
-rm nvim-update.sh
-sudo npm install -g neovim
-
 bash gradle-update.sh
 rm gradle-update.sh
 
@@ -32,9 +27,101 @@ sudo apt install -y pipewire wireplumber pavucontrol pamixer \
 sudo apt install -y gdisk exfatprogs
 sudo mkdir -p /mnt/usb
 
+sudo apt remove -y neovim
+bash nvim-update.sh
+rm nvim-update.sh
+sudo npm install -g neovim
+
 sudo apt autoremove -y
 
-mkdir -p "$HOME/Code"
+cat >"$HOME/.vimrc" <<'EOF'
+source $VIMRUNTIME/defaults.vim
+
+if exists('+guicursor')
+  set guicursor=
+endif
+
+set number
+set relativenumber
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set smartindent
+
+set nowrap
+
+set noswapfile
+set nobackup
+silent! call mkdir($HOME . '/.vim/undodir-vim', 'p')
+set undodir=$HOME/.vim/undodir-vim
+set undofile
+
+set nohlsearch
+set incsearch
+
+set scrolloff=8
+set signcolumn=yes
+set isfname+=@-@
+
+set updatetime=50
+
+set colorcolumn=80
+
+
+let mapleader = " "
+
+nnoremap <leader>pv :Ex<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+nnoremap J mzJ`z
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap =ap ma=ap'a
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+xnoremap <leader>p "_dP
+
+nnoremap <leader>P "+p
+vnoremap <leader>P "+p
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+
+nnoremap yA ggyG
+nnoremap <leader>yA gg"+yG
+
+inoremap <C-c> <Esc>
+nnoremap <C-f> <Esc>
+vnoremap <C-f> <Esc>
+inoremap <C-f> <Esc>
+cnoremap <C-f> <C-c>
+
+nnoremap Q <nop>
+
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+
+nnoremap <silent> <leader>x :!chmod +x %<CR>
+
+nnoremap <leader>n :next<CR>zz
+nnoremap <leader>m :prev<CR>zz
+nnoremap <leader>j :cnext<CR>zz
+nnoremap <leader>k :cprev<CR>zz
+nnoremap <leader>J :lnext<CR>zz
+nnoremap <leader>K :lprev<CR>zz
+
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
+EOF
+sudo ln -sf "$HOME/.vimrc" /root/.vimrc
 
 rm -rf "$HOME/.oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -127,6 +214,8 @@ source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zs
 EOF
 
 sudo chsh -s "$(which zsh)" "$USER"
+
+mkdir -p "$HOME/Code"
 
 mkdir -p "$HOME/.config/cmus"
 cat >"$HOME/.config/cmus/rc" <<'EOF'
