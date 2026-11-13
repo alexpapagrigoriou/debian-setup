@@ -60,6 +60,7 @@ touch "$PAUSE_FILE"
 
 cleanup() {
     rm -f "$PAUSE_FILE"
+    echo
     exit 0
 }
 
